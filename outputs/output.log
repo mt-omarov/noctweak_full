@@ -1,0 +1,42 @@
+NoCTweak v1.0 --- Sun Jul  2 20:05:21 2023
+Copyright (c) 2009-2012 by Anh Tran and Bevan Baas at the VCL Lab, UC Davis 
+
+===================== CONFIGURATIONS ===================== 
+./noctweak -seed 1234 -volt 1.0 -freqmode fixed -freq 1000 -dimx 8 -dimy 8 -pptype 3_1 -platform synthetic -traffic random -simmode cycle -sim 100 -warm 20 -routing xy -bsize 8 -plength fixed -length 10 -sa rr -llength 1000 -fir 3.0 -log output.log -vcd waveform.vcd 
+==================== SIMULATION DONE! ====================
+=================== PERFORMANCE RESULTS ==================
+Average network latency = 57.590 (cycles) = 0.058 (us) = 57.590 (ns)
+Average network throughput = 0.026 (packets/cycle) = 0.262 (flits/cycle) = 261.719 (flits/us) = 0.262 (flits/ns)
+------------------------------------------------------
+Total number of received packets after warmup = 134
+Simulation stop at cycle = 100th
+=========== POWER & ENERGY RESULTS (32-bit datapath) ===========
+=========== AT 1.000V, 1000.000MHz =========
+Average router power (both dynamic & leakage) = 10838.121 (uW); 
+--- clock power = 2182.452 (uW); reg. power = 3389.992 (uW); comb. power = 5265.678 (uW)
+++++++ average buffer power = 5455.456 (uW)
+-------- buffer clk = 1210.111 (uW); buffer reg. = 2520.036 (uW); buffer comb. = 1725.309 (uW)
+++++++ average routing power = 94.384 (uW)
+-------- routing clk = 50.203 (uW); routing reg. = 14.688 (uW); routing comb. = 29.492 (uW)
+++++++ average switch arbitration power = 86.197 (uW)
+-------- arbitration clk = 50.055 (uW); arbitration reg. = 11.248 (uW); arbitration comb. = 24.894 (uW)
+++++++ average crossbar power = 1039.891 (uW)
+++++++ average out_credit_counter power = 194.021 (uW)
+-------- credit_counter clk = 89.061 (uW); credit_counter reg. = 47.956 (uW); credit_counter comb. = 57.004 (uW)
+++++++ average link power = 2386.468 (uW)
+++++++ average pipeline_datapath power = 1512.778 (uW)
+-------- pipeline_datapath clk = 735.939 (uW); pipeline_datapath reg. = 774.651 (uW); pipeline_datapath comb. = 2.187 (uW)
+++++++ average pipeline_control power = 68.927 (uW)
+-------- pipeline_control clk = 47.082 (uW); pipeline_control reg. = 21.412 (uW); pipeline_control comb. = 0.432 (uW)
+==========================================
+Leakage router power = 61.909 (uW),  or 0.571% of the average power
+Inactive router power (average power at fir of 0 = router leakage + local router clock) = 316.302 (uW)
+==========================================
+Total power of all routers = 693639.757 (uW)
+Global clock tree power + PLL (don't count subtrees inside routers) = 19290.533 (uW)
+==> Total network power (routers and global clock tree) = 712930.290 (uW) = 712.930 (mW)
+Total network energy per packet = 425.630 (pJ/packet) = 42.563 (pJ/flit)
+--- energy of all routers per packet = 414.113 (pJ/packet) = 41.411 (pJ/flit)
+--- global clock tree energy per packet = 11.517 (pJ/packet) = 1.152 (pJ/flit)
+==========================================
+Average router energy per packet (including global clock) = 6.650 (pJ/packet/router) = 0.665 (pJ/flit/router)
